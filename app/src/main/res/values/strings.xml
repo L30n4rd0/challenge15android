@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Challenge15</string>
+    <string name="app_name">challenge15</string>
+    <string name="button_pause">Pause</string>
+    <string name="textViewSolution">Solution</string>
+    <string name="textViewTime">Time</string>
+    <string name="helloWorld">Hello World!!</string>
 </resources>
