@@ -4,4 +4,11 @@
     <string name="textViewSolution">Solution</string>
     <string name="textViewTime">Time</string>
     <string name="helloWorld">Hello World!!</string>
+
+    <string name="button_cancel">Iniciar novo jogo</string>
+    <string name="button_confirm">Continuar jogo</string>
+
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_top_block_playing_game">ca-app-pub-5542515662998685/7502396055</string>
 </resources>
