@@ -16,4 +16,24 @@
 
 ### Screenshots ###
 
+##### Initial Screen
 
+<img width="300" alt="Initial Screen" src="screenshots/screenshot_initial_screen.png">
+
+<br>
+
+##### Playing
+
+<img width="300" alt="Playing" src="screenshots/screenshot_playing.png">
+
+<br>
+
+##### Continuing a game match
+
+<img width="300" alt="Continuing a game match" src="screenshots/screenshot_continuing_a_game_match.png">
+
+<br>
+
+##### Challenge Finished
+
+<img width="300" alt="Challenge Finished" src="screenshots/screenshot_challenge_finished.png">
