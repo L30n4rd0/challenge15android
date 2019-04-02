@@ -4,6 +4,7 @@
 * Version: 1.0
 
 ### Development Tools and Technologies ###
+
 * Java Programming Language 
 * Android Studio
 * Inkscape (to create Scalable Vector Graphics)
