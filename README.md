@@ -1,29 +1,18 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Android project developed to learn more about the Android platform. This is the classic game to organize numbers in ascending order from 1 to 15.
+* Version: 1.0
+
+### Development Tools and Technologies ###
+* Java Programming Language 
+* Android Studio
+* Inkscape (to create Scalable Vector Graphics)
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Clone repository
+* Open project with Android Studio
 
-### Contribution guidelines ###
+### Screenshots ###
 
-* Writing tests
-* Code review
-* Other guidelines
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
