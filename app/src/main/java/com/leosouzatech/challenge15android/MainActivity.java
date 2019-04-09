@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Chronometer chronometer;
     private boolean chronometerPaused;
     private ImageView imageViewStart;
-    private List<ImageView> images;
+    private List<ImageView> imageViewList;
     private long timeWhenStoped;
     private float xCoordinateFreeSpace;
     private float yCoordinateFreeSpace;
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        for (ImageView view : this.images) {
+        for (ImageView view : this.imageViewList) {
 
             if (view != null) {
                 mySharedPreferences.edit().putFloat(view.getTag() + "x", view.getX()).apply();
@@ -132,11 +132,11 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.i("Thread", "Execultando");
 
-                    if ((images.get(0).getX()) != 0.0) {
+                    if ((imageViewList.get(0).getX()) != 0.0) {
 
-                        images.set(images.size() - 1, null);
+                        imageViewList.set(imageViewList.size() - 1, null);
 
-                        for (ImageView view : images) {
+                        for (ImageView view : imageViewList) {
                             if (view != null) {
                                 view.setX(mySharedPreferences.getFloat(view.getTag() + "x", view.getX()));
                                 view.setY(mySharedPreferences.getFloat(view.getTag() + "y", view.getY()));
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 //    private void setOnClickListenerToImages() {
-//        Iterator it = this.images.iterator();
+//        Iterator it = this.imageViewList.iterator();
 //        while (it.hasNext()) {
 //            ImageView image = (ImageView) it.next();
 //            if (image != null) {
@@ -218,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setOnTouchListenerToImages() {
 
-        for (ImageView image : this.images) {
+        for (ImageView image : this.imageViewList) {
 
             if (image != null) {
                 image.setOnTouchListener(new MyOnTouchListener());
@@ -242,55 +242,55 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadArrayListImages() {
 
-        this.images = new ArrayList<>();
+        this.imageViewList = new ArrayList<>();
 
-        this.images.add((ImageView) findViewById(R.id.imageView1));
-        this.images.get(this.images.size() - 1).setTag(1);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView1));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(1);
 
-        this.images.add((ImageView) findViewById(R.id.imageView14));
-        this.images.get(this.images.size() - 1).setTag(14);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView14));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(14);
 
-        this.images.add((ImageView) findViewById(R.id.imageView5));
-        this.images.get(this.images.size() - 1).setTag(5);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView5));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(5);
 
-        this.images.add((ImageView) findViewById(R.id.imageView7));
-        this.images.get(this.images.size() - 1).setTag(7);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView7));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(7);
 
-        this.images.add((ImageView) findViewById(R.id.imageView2));
-        this.images.get(this.images.size() - 1).setTag(2);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView2));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(2);
 
-        this.images.add((ImageView) findViewById(R.id.imageView10));
-        this.images.get(this.images.size() - 1).setTag(10);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView10));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(10);
 
-        this.images.add((ImageView) findViewById(R.id.imageView8));
-        this.images.get(this.images.size() - 1).setTag(8);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView8));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(8);
 
-        this.images.add((ImageView) findViewById(R.id.imageView6));
-        this.images.get(this.images.size() - 1).setTag(6);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView6));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(6);
 
-        this.images.add((ImageView) findViewById(R.id.imageView3));
-        this.images.get(this.images.size() - 1).setTag(3);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView3));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(3);
 
-        this.images.add((ImageView) findViewById(R.id.imageView4));
-        this.images.get(this.images.size() - 1).setTag(4);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView4));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(4);
 
-        this.images.add((ImageView) findViewById(R.id.imageView15));
-        this.images.get(this.images.size() - 1).setTag(15);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView15));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(15);
 
-        this.images.add((ImageView) findViewById(R.id.imageView11));
-        this.images.get(this.images.size() - 1).setTag(11);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView11));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(11);
 
-        this.images.add((ImageView) findViewById(R.id.imageView13));
-        this.images.get(this.images.size() - 1).setTag(13);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView13));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(13);
 
-        this.images.add((ImageView) findViewById(R.id.imageView9));
-        this.images.get(this.images.size() - 1).setTag(9);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView9));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(9);
 
-        this.images.add((ImageView) findViewById(R.id.imageView12));
-        this.images.get(this.images.size() - 1).setTag(12);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageView12));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(12);
 
-        this.images.add((ImageView) findViewById(R.id.imageViewStart));
-        this.images.get(this.images.size() - 1).setTag(0);
+        this.imageViewList.add((ImageView) findViewById(R.id.imageViewStart));
+        this.imageViewList.get(this.imageViewList.size() - 1).setTag(0);
 
     }
 
@@ -330,13 +330,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void checkMove() {
+
         int i = 0;
-        while (this.images.get(i) != null && (int) this.images.get(i).getTag() == i + 1) {
+
+        while (this.imageViewList.get(i) != null && (int) this.imageViewList.get(i).getTag() == i + 1) {
+
             i++;
+
         }
-        if (i == this.images.size() - 1) {
+
+        if (i == this.imageViewList.size() - 1) {
+
             Toast.makeText(getApplicationContext(), "Parab\u00e9ns vc conseguiu!", Toast.LENGTH_LONG).show();
             gameReset();
+
         }
     }
 
@@ -355,7 +362,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showArray() {
 
-        for (ImageView view : this.images) {
+        for (ImageView view : this.imageViewList) {
 
             if (view == null) {
 
@@ -384,43 +391,77 @@ public class MainActivity extends AppCompatActivity {
         private MyOnTouchListener() {
         }
 
-        public boolean onTouch(View v, MotionEvent event) {
+        public boolean onTouch(View view, MotionEvent event) {
             
             this.action = event.getAction();
             
             switch (this.action) {
+
                 case MotionEvent.ACTION_DOWN:
+
                     Log.i("DOWN", "executed");
-                    
-                    if ((int) v.getTag() != 0) {
-                        if ((v.getX() + ((float) v.getWidth()) == xCoordinateFreeSpace && v.getY() + ((float) v.getHeight()) == yCoordinateFreeSpace + ((float) v.getHeight())) || ((v.getX() - ((float) v.getWidth()) == xCoordinateFreeSpace && v.getY() + ((float) v.getHeight()) == yCoordinateFreeSpace + ((float) v.getHeight())) || ((v.getY() + ((float) v.getHeight()) == yCoordinateFreeSpace && v.getX() + ((float) v.getWidth()) == xCoordinateFreeSpace + ((float) v.getWidth())) || (v.getY() - ((float) v.getHeight()) == yCoordinateFreeSpace && v.getX() + ((float) v.getWidth()) == xCoordinateFreeSpace + ((float) v.getWidth()))))) {
-                            if (chronometerPaused) {
-                                chronometerStart();
-                            }
-                            this.xCoordinateTemp = v.getX();
-                            this.yCoordinateTemp = v.getY();
-                            v.setX(xCoordinateFreeSpace);
-                            v.setY(yCoordinateFreeSpace);
+
+                    if ((int) view.getTag() != 0) {
+
+                        if (
+                                (view.getX() + view.getWidth() == xCoordinateFreeSpace &&
+                                 view.getY() + view.getHeight() == yCoordinateFreeSpace + view.getHeight()) ||
+                                ((view.getX() - view.getWidth() == xCoordinateFreeSpace &&
+                                view.getY() + view.getHeight() == yCoordinateFreeSpace + view.getHeight()) ||
+                                ((view.getY() + view.getHeight() == yCoordinateFreeSpace &&
+                                view.getX() + view.getWidth() == xCoordinateFreeSpace + view.getWidth()) ||
+                                (view.getY() - view.getHeight() == yCoordinateFreeSpace &&
+                                view.getX() + view.getWidth() == xCoordinateFreeSpace + view.getWidth())))
+                        ) {
+                            
+//                            if (chronometerPaused) {
+//                                chronometerStart();
+//                            }
+                            
+                            this.xCoordinateTemp = view.getX();
+                            this.yCoordinateTemp = view.getY();
+
+                            view.setX(xCoordinateFreeSpace);
+                            view.setY(yCoordinateFreeSpace);
+
                             xCoordinateFreeSpace = this.xCoordinateTemp;
                             yCoordinateFreeSpace = this.yCoordinateTemp;
-                            this.indexOfCurrentImage = images.indexOf(v);
-                            this.indexOfNullImage = images.indexOf(null);
-                            images.set(this.indexOfNullImage, (ImageView) v);
-                            images.set(this.indexOfCurrentImage, null);
+
+                            this.indexOfCurrentImage = imageViewList.indexOf(view);
+                            this.indexOfNullImage = imageViewList.indexOf(null);
+
+                            imageViewList.set(this.indexOfNullImage, (ImageView) view);
+                            imageViewList.set(this.indexOfCurrentImage, null);
+
                             checkMove();
+
                             break;
                         }
+
+                    } else {
+
+                        if (xCoordinateFreeSpace == -1f) {
+
+                            xCoordinateFreeSpace = view.getX();
+                            yCoordinateFreeSpace = view.getY();
+
+                            this.indexOfCurrentImage = imageViewList.indexOf(view);
+
+                            view.setX( view.getX() - view.getWidth() * 2 );
+                            // (float) view.getHeight() / 3) -->> because of the top wall
+                            view.setY( view.getY() - (view.getHeight() * 4 + (float) view.getHeight() / 3) );
+
+                            imageViewList.set(this.indexOfCurrentImage, null);
+
+                        }
+
                     }
-                    xCoordinateFreeSpace = v.getX();
-                    yCoordinateFreeSpace = v.getY();
-                    this.indexOfCurrentImage = images.indexOf(v);
-                    v.setX(v.getX() - ((float) (v.getWidth() * 2)));
-                    v.setY(v.getY() - ((float) ((v.getHeight() * 4) + (v.getHeight() / 3))));
-                    images.set(this.indexOfCurrentImage, null);
+
+
                     if (chronometerPaused) {
                         chronometerStart();
-                        break;
                     }
+
                     break;
                     
                     
