@@ -388,6 +388,7 @@ public class MainActivity extends AppCompatActivity {
         private int indexOfNullImage;
         private float xCoordinateTemp;
         private float yCoordinateTemp;
+        private ImageView imageView;
 
         private MyOnTouchListener() {
         }
@@ -395,6 +396,7 @@ public class MainActivity extends AppCompatActivity {
         public boolean onTouch(View view, MotionEvent event) {
             
             this.action = event.getAction();
+            imageView = (ImageView) view;
             
             switch (this.action) {
 
@@ -402,39 +404,39 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.i("DOWN", "executed");
 
-                    if ((int) view.getTag() != 0) {
+                    if ((int) imageView.getTag() != 0) {
 
                         if (
                             // moving to right
-                            (view.getX() + view.getWidth() == xCoordinateFreeSpace && view.getY() == yCoordinateFreeSpace) ||
+                            (imageView.getX() + imageView.getWidth() == xCoordinateFreeSpace && imageView.getY() == yCoordinateFreeSpace) ||
 
                             // moving to left
-                            (view.getX() - view.getWidth() == xCoordinateFreeSpace && view.getY() == yCoordinateFreeSpace) ||
+                            (imageView.getX() - imageView.getWidth() == xCoordinateFreeSpace && imageView.getY() == yCoordinateFreeSpace) ||
 
                             // moving to down
-                            (view.getY() + view.getHeight() == yCoordinateFreeSpace && view.getX() == xCoordinateFreeSpace) ||
+                            (imageView.getY() + imageView.getHeight() == yCoordinateFreeSpace && imageView.getX() == xCoordinateFreeSpace) ||
 
                             // moving to up
-                            (view.getY() - view.getHeight() == yCoordinateFreeSpace && view.getX() == xCoordinateFreeSpace)
+                            (imageView.getY() - imageView.getHeight() == yCoordinateFreeSpace && imageView.getX() == xCoordinateFreeSpace)
                         ) {
                             
 //                            if (chronometerPaused) {
 //                                chronometerStart();
 //                            }
                             
-                            this.xCoordinateTemp = view.getX();
-                            this.yCoordinateTemp = view.getY();
+                            this.xCoordinateTemp = imageView.getX();
+                            this.yCoordinateTemp = imageView.getY();
 
-                            view.setX(xCoordinateFreeSpace);
-                            view.setY(yCoordinateFreeSpace);
+                            imageView.setX(xCoordinateFreeSpace);
+                            imageView.setY(yCoordinateFreeSpace);
 
                             xCoordinateFreeSpace = this.xCoordinateTemp;
                             yCoordinateFreeSpace = this.yCoordinateTemp;
-
-                            this.indexOfCurrentImage = imageViewList.indexOf(view);
+                            
+                            this.indexOfCurrentImage = imageViewList.indexOf(imageView);
                             this.indexOfNullImage = imageViewList.indexOf(null);
 
-                            imageViewList.set(this.indexOfNullImage, (ImageView) view);
+                            imageViewList.set(this.indexOfNullImage, imageView);
                             imageViewList.set(this.indexOfCurrentImage, null);
 
                             checkMove();
@@ -446,14 +448,14 @@ public class MainActivity extends AppCompatActivity {
 
                         if (xCoordinateFreeSpace == -1f) {
 
-                            xCoordinateFreeSpace = view.getX();
-                            yCoordinateFreeSpace = view.getY();
+                            xCoordinateFreeSpace = imageView.getX();
+                            yCoordinateFreeSpace = imageView.getY();
 
-                            this.indexOfCurrentImage = imageViewList.indexOf(view);
+                            this.indexOfCurrentImage = imageViewList.indexOf(imageView);
 
-                            view.setX( view.getX() - view.getWidth() * 2 );
-                            // (float) view.getHeight() / 3) -->> because of the top wall
-                            view.setY( view.getY() - (view.getHeight() * 4 + (float) view.getHeight() / 3) );
+                            imageView.setX( imageView.getX() - imageView.getWidth() * 2 );
+                            // (float) imageView.getHeight() / 3) -->> because of the top wall
+                            imageView.setY( imageView.getY() - (imageView.getHeight() * 4 + (float) imageView.getHeight() / 3) );
 
                             imageViewList.set(this.indexOfCurrentImage, null);
 
