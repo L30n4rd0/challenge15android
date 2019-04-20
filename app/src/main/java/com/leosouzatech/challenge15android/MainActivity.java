@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.i("onCreate", "Executed");
-//        loadBanner();
+
         this.chronometerPaused = true;
         this.xCoordinateFreeSpace = -1.0f;
         this.yCoordinateFreeSpace = -1.0f;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         this.imageViewStart = findViewById(R.id.imageViewStart);
         loadArrayListImages();
         setOnTouchListenerToImages();
+//        loadBanner();
 
     }
 
@@ -231,10 +232,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void initCoordinatesFreeSpace() {
-        this.xCoordinateFreeSpace = 458.0f;
-        this.yCoordinateFreeSpace = 348.0f;
-    }
+//    private void initCoordinatesFreeSpace() {
+//        this.xCoordinateFreeSpace = 458.0f;
+//        this.yCoordinateFreeSpace = 348.0f;
+//    }
 
 
 
@@ -404,14 +405,17 @@ public class MainActivity extends AppCompatActivity {
                     if ((int) view.getTag() != 0) {
 
                         if (
-                                (view.getX() + view.getWidth() == xCoordinateFreeSpace &&
-                                 view.getY() + view.getHeight() == yCoordinateFreeSpace + view.getHeight()) ||
-                                ((view.getX() - view.getWidth() == xCoordinateFreeSpace &&
-                                view.getY() + view.getHeight() == yCoordinateFreeSpace + view.getHeight()) ||
-                                ((view.getY() + view.getHeight() == yCoordinateFreeSpace &&
-                                view.getX() + view.getWidth() == xCoordinateFreeSpace + view.getWidth()) ||
-                                (view.getY() - view.getHeight() == yCoordinateFreeSpace &&
-                                view.getX() + view.getWidth() == xCoordinateFreeSpace + view.getWidth())))
+                            // moving to right
+                            (view.getX() + view.getWidth() == xCoordinateFreeSpace && view.getY() == yCoordinateFreeSpace) ||
+
+                            // moving to left
+                            (view.getX() - view.getWidth() == xCoordinateFreeSpace && view.getY() == yCoordinateFreeSpace) ||
+
+                            // moving to down
+                            (view.getY() + view.getHeight() == yCoordinateFreeSpace && view.getX() == xCoordinateFreeSpace) ||
+
+                            // moving to up
+                            (view.getY() - view.getHeight() == yCoordinateFreeSpace && view.getX() == xCoordinateFreeSpace)
                         ) {
                             
 //                            if (chronometerPaused) {
