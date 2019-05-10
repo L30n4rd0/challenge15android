@@ -332,9 +332,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkMove() {
 
+        showArray();
+
         int i = 0;
 
-        while (this.imageViewList.get(i) != null && (int) this.imageViewList.get(i).getTag() == i + 1) {
+        while (this.imageViewList.get(i) != null &&
+                (int) this.imageViewList.get(i).getTag() == i + 1) {
 
             i++;
 
@@ -342,7 +345,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (i == this.imageViewList.size() - 1) {
 
-            Toast.makeText(getApplicationContext(), "Parab\u00e9ns vc conseguiu!", Toast.LENGTH_LONG).show();
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Parab\u00e9ns vc conseguiu!",
+                    Toast.LENGTH_LONG
+            ).show();
+
             gameReset();
 
         }
@@ -363,19 +371,28 @@ public class MainActivity extends AppCompatActivity {
 
     private void showArray() {
 
+        String arrayString = "\n";
+
         for (ImageView view : this.imageViewList) {
 
             if (view == null) {
 
-                Log.i("Tag", "null");
+                arrayString += "null ";
+
+//                Log.i("Tag", "null");
 
             } else {
 
-                Log.i("Tag", view.getTag().toString());
-                Log.i("X", view.getX() + BuildConfig.FLAVOR);
+                arrayString += view.getTag().toString() + " ";
+
+//                Log.i("Tag", view.getTag().toString());
+//                Log.i("X", view.getX() + "");
 
             }
         }
+
+        Log.i("arrayListImages", arrayString);
+
     }
 
 
